@@ -4,11 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Odin Mini Messageboard</title>
 </head>
 
 <body>
+    <h1>Recent Messages:</h1>
+    <% messages.forEach((message)=> { %>
+        <div class="message-body">
+            <h3>
+                <span>
+                    <%= message.text %>
+                </span>
 
+            </h3>
+            <span>
+                By: <%= message.user %>
+            </span>
+            <p>
+                On: <%= message.added %>
+            </p>
+        </div>
+        <% }) %>
 </body>
 
 </html>

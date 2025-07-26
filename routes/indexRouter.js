@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const path = require('node:path');
 
 const indexRouter = Router();
 
@@ -16,7 +17,7 @@ const messages = [
 ];
 
 indexRouter.get('/', (req, res) => {
-    res.send('You are accessing the home page!')
+    res.render('index', { messages: messages });
 });
 
 module.exports = indexRouter;
