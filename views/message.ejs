@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Details</title>
+</head>
+
+<body>
+    <h1 class="message-user">By: <%= message.user %>
+    </h1>
+    <h2 class="message-text">
+        <%= message.text %>
+    </h2>
+    <p class="message-date">
+        <%= message.added.toString().slice(0, 21) %>
+    </p>
+    <a href="/">Return</a>
+</body>
+
+</html>

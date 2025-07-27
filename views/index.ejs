@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <a href="/new">Write a new Message</a>
     <h1>Recent Messages:</h1>
     <% messages.forEach((message)=> { %>
         <div class="message-body">
@@ -21,8 +22,13 @@
                 By: <%= message.user %>
             </span>
             <p>
-                On: <%= message.added %>
+                On: <%= message.added.toString().slice(0, 21) %>
             </p>
+            <span>
+                <button>
+                    <a href="/message/<%= message.id %>">(Open Message Details)</a>
+                </button>
+            </span>
         </div>
         <% }) %>
 </body>
