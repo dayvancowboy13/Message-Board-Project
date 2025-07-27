@@ -4,33 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Odin Mini Messageboard</title>
 </head>
 
 <body>
-    <a href="/new">Write a new Message</a>
-    <h1>Recent Messages:</h1>
-    <% messages.forEach((message)=> { %>
-        <div class="message-body">
-            <h3>
-                <span>
-                    <%= message.text %>
-                </span>
-
-            </h3>
-            <span>
-                By: <%= message.user %>
-            </span>
-            <p>
-                On: <%= message.added.toString().slice(0, 21) %>
-            </p>
-            <span>
-                <button>
-                    <a href="/message/<%= message.id %>">(Open Message Details)</a>
-                </button>
-            </span>
-        </div>
-        <% }) %>
+    <div class="mainContainer">
+        <h1 class="homeTitle">Odin Messageboard</h1>
+        <a href="/new">Write a new Message</a>
+        <h2 class="messagesHeading">Recent Messages:</h1>
+            <div class="messagesContainer">
+                <% messages.forEach((message)=> { %>
+                    <div class="messageBody">
+                        <p class="messageText">
+                            <%= message.text %>
+                        </p>
+                        <p class="messageUser">
+                            By: <%= message.user %>
+                        </p>
+                        <p class="messageDate">
+                            <%= message.added.toString().slice(0, 21) %>
+                        </p>
+                        <span>
+                            <button class="detailsBtn">
+                                <a href="/message/<%= message.id %>">(Open Message Details)</a>
+                            </button>
+                        </span>
+                    </div>
+                    <% }) %>
+            </div>
+    </div>
 </body>
 
 </html>

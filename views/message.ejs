@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Message Details</title>
 </head>
 
 <body>
-    <h1 class="message-user">By: <%= message.user %>
-    </h1>
-    <h2 class="message-text">
-        <%= message.text %>
-    </h2>
-    <p class="message-date">
-        <%= message.added.toString().slice(0, 21) %>
-    </p>
-    <a href="/">Return</a>
+    <div class="messageDetailContainer">
+        <p class="messageUser">
+            <%= message.user %>:
+        </p>
+        <p class="messageText">
+            "<%= message.text %>"
+        </p>
+        <p class="messageDate">
+            <%= message.added.toString().slice(0, 21) %>
+        </p>
+        <a href="/">
+            <p class="returnLinkTxt">Return</p>
+        </a>
+    </div>
 </body>
 
 </html>

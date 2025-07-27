@@ -3,19 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>New Message</title>
 </head>
 
 <body>
-    <h1>Write a new message!</h1>
-    <form method="POST" action="/new">
-        <label for="messageUser">User Name:</label>
-        <input type="text" id="messageUser" name="messageUser">
-        <label for="messageBody">Message:</label>
-        <input type="text" id="messageBody" name="messageBody">
-        <button type="submit">Click Me!</button>
-    </form>
+    <div class="newMessageContainer">
+        <h1>Write a new message!</h1>
+        <form class="newMessageForm" method="POST" action="/new">
+            <div class="formItem">
+                <label for="messageUser">User Name:</label>
+                <input type="text" id="messageUser" name="messageUser">
+            </div>
+            <div class="formItem">
+                <label for="messageBody">Message:</label>
+                <input type="text" id="messageBody" name="messageBody">
+            </div>
+            <button class="newMsgSubmitBtn" type="submit">Click Me!</button>
+        </form>
+    </div>
 </body>
 
 </html>
