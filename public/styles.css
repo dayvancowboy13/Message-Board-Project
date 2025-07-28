@@ -43,7 +43,7 @@ button:hover {
     padding: 30px;
 }
 
-.messagesContainer {}
+/* .messagesContainer {} */
 
 .messageBody {
     background-color: rgb(186, 190, 248);
@@ -86,9 +86,7 @@ button:hover {
     margin: 5px 0;
 }
 
-.homeTitle {
-    /* color: blue; */
-}
+/* .homeTitle {} */
 
 .newMessageForm {
     display: flex;
