@@ -1,7 +1,8 @@
 const pool = require('./pool');
 
 exports.getAll = async function () {
-    const { rows } = pool.query(`SELECT * FROM messages`);
+    console.log('Querying for all rows...');
+    const { rows } = await pool.query(`SELECT * FROM messages`);
     return rows;
 }
 
