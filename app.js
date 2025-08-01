@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('node:path');
 const assetsPath = path.join(__dirname, "public");
-// require("dotenv").config();
+require("dotenv").config();
 console.log(process.env.PORT);
 app.use(express.static(assetsPath));
+
+// console.log(process.env);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

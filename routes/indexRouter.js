@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const path = require('node:path');
+const indexController = require('../controllers/indexController');
 
 const indexRouter = Router();
 
@@ -25,6 +26,7 @@ const messages = [
 ];
 
 indexRouter.get('/', (req, res) => {
+    indexController.getAllContent(req, res);
     res.render('index', { messages: messages });
 });
 
