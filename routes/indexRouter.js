@@ -25,10 +25,7 @@ const messages = [
     },
 ];
 
-indexRouter.get('/', (req, res) => {
-    indexController.getAllContent(req, res);
-    res.render('index', { messages: messages });
-});
+indexRouter.get('/', indexController.getAllContent);
 
 indexRouter.get('/new', (req, res) => {
     res.render('new');

@@ -17,13 +17,13 @@
                 <% messages.forEach((message)=> { %>
                     <div class="messageBody">
                         <p class="messageText">
-                            <%= message.text %>
+                            <%= message.message %>
                         </p>
                         <p class="messageUser">
-                            By: <%= message.user %>
+                            By: <%= message.author %>
                         </p>
                         <p class="messageDate">
-                            <%= message.added.toString().slice(0, 21) %>
+                            <%= message.date_added.toString().slice(0, 21) %>
                         </p>
                         <span>
                             <button class="detailsBtn">
