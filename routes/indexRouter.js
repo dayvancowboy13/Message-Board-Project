@@ -27,16 +27,10 @@ const messages = [
 
 indexRouter.get('/', indexController.getAllContent);
 
-indexRouter.get('/new', (req, res) => {
-    res.render('new');
-});
+indexRouter.get('/new', indexController.getNew);
 
 indexRouter.post('/new', indexController.createNewMessage);
 
-indexRouter.get('/message/:id', (req, res) => {
-    const id = Number(req.params.id);
-    let message = messages.find((message) => (message.id === id));
-    res.render('message', { message: message, id: id });
-})
+indexRouter.get('/message/:id', indexController.getMessage)
 
 module.exports = indexRouter;

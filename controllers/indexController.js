@@ -9,15 +9,22 @@ exports.getAllContent = async function (req, res) {
     })
 }
 
+exports.getNew = (req, res) => {
+    res.render('new');
+}
+
 exports.createNewMessage = async function (req, res) {
     console.log('Submitting new message...');
     await db.insertMessage(
         req.body.messageUser,
         req.body.messageBody
     );
-    // messages.push({ text: req.body.messageBody, user: req.body.messageUser,
-    //  added: new Date(), id: messages.length + 1 });
-
     res.redirect('/');
+}
 
+exports.getMessage = async function (req, res) {
+    const id = Number(req.params.id);
+    // let message = messages.find((message) => (message.id === id));
+    let result = await db.getMessage(id);
+    res.render('message', { message: result, id: id });
 }
