@@ -30,9 +30,9 @@ exports.getMessage = async function (req, res) {
     console.log(result.message);
     res.render('message', {
         message: {
-            user: result.author,
-            text: result.message,
-            added: String.toString(result.date_added).slice(0, 9),
+            user: result[0].author,
+            text: result[0].message,
+            added: String.toString(result[0].date_added).slice(0, 9),
         }, id: id
     });
 }
