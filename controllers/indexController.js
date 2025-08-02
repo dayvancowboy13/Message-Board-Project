@@ -8,3 +8,16 @@ exports.getAllContent = async function (req, res) {
         messages: content,
     })
 }
+
+exports.createNewMessage = async function (req, res) {
+    console.log('Submitting new message...');
+    await db.insertMessage(
+        req.body.messageUser,
+        req.body.messageBody
+    );
+    // messages.push({ text: req.body.messageBody, user: req.body.messageUser,
+    //  added: new Date(), id: messages.length + 1 });
+
+    res.redirect('/');
+
+}

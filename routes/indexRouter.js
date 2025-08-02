@@ -31,12 +31,7 @@ indexRouter.get('/new', (req, res) => {
     res.render('new');
 });
 
-indexRouter.post('/new', (req, res) => {
-    console.log('Received post request!');
-    // console.log(req.body);
-    messages.push({ text: req.body.messageBody, user: req.body.messageUser, added: new Date(), id: messages.length + 1 });
-    res.redirect('/');
-});
+indexRouter.post('/new', indexController.createNewMessage);
 
 indexRouter.get('/message/:id', (req, res) => {
     const id = Number(req.params.id);

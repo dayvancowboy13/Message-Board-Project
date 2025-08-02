@@ -6,3 +6,10 @@ exports.getAll = async function () {
     return rows;
 }
 
+exports.insertMessage = async function (author, message) {
+    await pool.query(`INSERT INTO messages (author, message, date_added) 
+        VALUES ($!1, $2, CURRENT_TIMESTAMP)`, [author, message])
+
+}
+
+
