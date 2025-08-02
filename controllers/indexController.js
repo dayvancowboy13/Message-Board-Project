@@ -26,5 +26,12 @@ exports.getMessage = async function (req, res) {
     const id = Number(req.params.id);
     // let message = messages.find((message) => (message.id === id));
     let result = await db.getMessage(id);
-    res.render('message', { message: result, id: id });
+    console.log(result);
+    res.render('message', {
+        message: {
+            user: result.author,
+            text: result.message,
+            added: result.date_added,
+        }, id: id
+    });
 }
