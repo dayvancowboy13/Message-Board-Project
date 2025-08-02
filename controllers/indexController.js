@@ -32,7 +32,7 @@ exports.getMessage = async function (req, res) {
         message: {
             user: result[0].author,
             text: result[0].message,
-            added: String.toString(result[0].date_added).slice(0, 9),
+            added: result[0].date_added,
         }, id: id
     });
 }
